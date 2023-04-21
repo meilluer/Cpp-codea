@@ -1,10 +1,10 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-class k2{
+class vec{
     public:
     vector<int> v;
-     k2(){
+     vec(){
          int a;
         cout<<"enter size";
         cin>>a;
@@ -20,7 +20,7 @@ class k2{
     }
 };
 int main(){
-    k2 b;
+    vec b;
     b.disp();
     return 0;
 }
