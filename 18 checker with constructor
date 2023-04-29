@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int n;
+class age{
+    public:
+    void check(int x){
+      
+         if(n>18){
+             
+            cout<<"passed";
+        }
+        else{
+            cout<<"failed";
+        }
+    }
+    age(int y){
+        n=y;
+       check(y);
+    };
+};
+int main(){
+    cout<<"enter age";
+             cin>>n;
+    age a(n);
+    return 0;
+}
