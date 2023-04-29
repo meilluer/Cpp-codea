@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+class quick {
+public:
+    int ary[5];
+
+    void make() {
+        for(int i=0; i<4; i++) {
+            cout << "Enter : ";
+            cin >> ary[i];
+        }
+    }
+void sort(int start, int end) {
+        if(start < end) {
+            int pvt = ary[end];
+            int j = start - 1;
+            for(int i = start; i < end; i++) {
+                if(ary[i] < pvt) {
+                    j++;
+                    swap(ary[i], ary[j]);
+                }
+            }
+            swap(ary[j+1], pvt);
+            int p = j+1;
+            sort(start, p-1);
+            sort(p+1, end);
+        }
+    }
+};
+
+int main() {
+    quick q;
+    q.make();
+    q.sort(0, 3);
+    for(int i=0; i<4; i++) {
+        cout << q.ary[i];
+    }
+    return 0;
+}
