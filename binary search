@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int search(int ary[],int target,int low ,int high){
+    if (low > high) {
+        cout << "not found";
+        return -1;
+    }
+    int mid=(high+low)/2;
+    if(ary[mid]==target){
+        return mid;
+    }
+    else if(ary[mid]<target){
+        return search(ary,target,mid+1,high);
+    }
+    else if(ary[mid]>target){
+        return search(ary,target,low,mid-1);
+    }
+    return -1;
+};
+int main(){
+    int ary[]={1,2,3,4,5,6};
+    int index=search(ary,3,0,5);
+    if (index != -1) {
+        cout  << index << endl;
+    };
+    return 0;
+}
