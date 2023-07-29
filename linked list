@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+class node{
+    public:
+    int data;
+    node*pointer;
+};
+int main(){
+    node*head;
+    node*one;
+    node*two;
+    node*three;
+    one=new node();
+    two=new node();
+    three=new node();
+    one->data=1;
+    two->data=2;
+    three->data=3;
+    one->pointer=two;
+    two->pointer=three;
+    three->pointer=NULL;
+    head=one;
+    while(head!=0){
+        cout<<head->data;
+        head=head->pointer;
+    }
+    return 0;
+}
