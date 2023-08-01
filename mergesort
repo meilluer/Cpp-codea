@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+void sort(int arr[], int arr2[], int arr3[], int m, int n) {
+    int i = 0, j = 0, k = 0;
+    while (i < m && j < n) {
+        if (arr[i] < arr2[j]) {
+            arr3[k] = arr[i];
+            i++, k++;
+        } else if (arr[i] == arr2[j]) {
+            arr3[k] = arr[i];
+            i++, j++, k++;
+        } else {
+            arr3[k] = arr2[j];
+            j++, k++;
+        }
+    }
+    while (i < m) {
+        arr3[k] = arr[i];
+        i++, k++;
+    }
+    while (j < n) {
+        arr3[k] = arr2[j];
+        j++, k++;
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4};
+    int arr2[] = {5, 6, 7};
+    int x = sizeof(arr) / sizeof(arr[0]) + sizeof(arr2) / sizeof(arr2[0]);
+    int arr3[x];
+    sort(arr, arr2, arr3, 4, 3);
+    for (int i = 0; i < x; i++) {
+        cout << arr3[i] ;
+    }
+    return 0;
+}
